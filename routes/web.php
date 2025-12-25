@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SensorController;
 
-// Dashboard
 Route::get('/', function () {
     return redirect('/dashboard');
 });
@@ -67,5 +66,4 @@ Route::post('/api/command', function (Request $request) {
     return response()->json(['success' => true, 'id' => $id]);
 });
 
-// SSE untuk realtime dashboard
 Route::get('/events', [SensorController::class, 'events']);
